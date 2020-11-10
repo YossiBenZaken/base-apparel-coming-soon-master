@@ -115,12 +115,12 @@
       outline: 0;
     }
 
-    input[type='email'] {
+    input[type='text'] {
       width: 100%;
       border: 1px solid #ce9797;
     }
 
-    input[type='email']::placeholder {
+    input[type='text']::placeholder {
       color: #ce9797;
     }
 
@@ -231,14 +231,14 @@
         announcements and our launch deals.
       </p>
       <!-- form start-->
-      <form action="" onsubmit="return validateForm()" id="emailForm">
+      <form action="" onsubmit="validateForm()" id="emailForm">
         <div class="form-group">
-          <input type="email" name="email-address" id="email" placeholder="Email Address" aria-label="emailInput" />
+          <input type="text" name="email-address" id="email" placeholder="Email Address" aria-label="emailInput" />
           <button type="submit">
             <img src="images/icon-arrow.svg" alt="button arrow" />
           </button>
         </div>
-        <p class="error">Please provide a valid email</p>
+        <p class="error">l</p>
       </form>
     </section>
     <section class="imagebg">
@@ -251,20 +251,19 @@
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Yossi Ben Zaken</a>.
     </p>
   </footer>
   <script>
     let emailInput = document.querySelector('#email');
     let error = document.querySelectorAll('.error')[0];
     function validateForm() {
-      let split = emailInput.value.split('.');
-      if (emailInput.value === '' || emailInput.value.indexOf('@') === -1) {
-        event.preventDefault();
+      event.preventDefault()
         error.style.display = 'block';
-      } else if (split[1].indexOf('.') === -1) {
-        event.preventDefault();
-        error.style.display = 'block';
+      if(emailInput.value == ''){
+        error.innerHTML = 'The input field is empty'
+      } else if (!RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g).test(emailInput)){
+        error.innerHTML = 'Please provide a valid email';
       }
     }
   </script>
