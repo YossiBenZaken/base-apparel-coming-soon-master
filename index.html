@@ -231,7 +231,7 @@
         announcements and our launch deals.
       </p>
       <!-- form start-->
-      <form action="" onsubmit="validateForm()" id="emailForm">
+      <form onsubmit="validateForm()" id="emailForm">
         <div class="form-group">
           <input type="text" name="email-address" id="email" placeholder="Email Address" aria-label="emailInput" />
           <button type="submit">
@@ -242,6 +242,7 @@
       </form>
     </section>
     <section class="imagebg">
+      <h1></h1>
       <img src="images/hero-desktop.jpg" alt="hero desktop image" class="img-fluid hidden-mobile" />
       <img src="images/hero-mobile.jpg" alt="hero desktop image" class="img-fluid hidden-desktop" />
     </section>
@@ -259,10 +260,10 @@
     let error = document.querySelectorAll('.error')[0];
     function validateForm() {
       event.preventDefault()
-        error.style.display = 'block';
-      if(emailInput.value == ''){
+      error.style.display = 'block';
+      if (emailInput.value == '') {
         error.innerHTML = 'The input field is empty'
-      } else if (!RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g).test(emailInput)){
+      } else if (!RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g).test(emailInput)) {
         error.innerHTML = 'Please provide a valid email';
       }
     }
