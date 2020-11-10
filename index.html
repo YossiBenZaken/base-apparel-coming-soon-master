@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+    :root {
+      --DesaturatedRed: hsl(0, 36%, 70%);
+      --SoftRed: hsl(0, 93%, 68%);
+      --DarkGrayishRed: hsl(0, 6%, 24%);
+      --gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+      --gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 16px;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    main {
+      display: flex;
+      background-image: url('/images/bg-pattern-desktop.svg');
+      background: url('/images/bg-pattern-desktop.svg'),
+        -moz-linear-gradient(135deg, white, #fff5f5);
+      background: url('/images/bg-pattern-desktop.svg'),
+        -webkit-linear-gradient(135deg, white, #fff5f5);
+      background: url('/images/bg-pattern-desktop.svg'),
+        -o-linear-gradient(135deg, white, #fff5f5);
+      background: url('/images/bg-pattern-desktop.svg'),
+        linear-gradient(135deg, white, #fff5f5);
+    }
+
+    .content {
+      width: 60%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 10em 6em 4em;
+    }
+
+    .content h1 {
+      font-size: 4em;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+    }
+
+    h1>.colored {
+      font-weight: 300;
+      color: #ce9797;
+    }
+
+    .content>p {
+      color: #ce9797;
+      line-height: 1.5;
+      padding: 1em;
+      width: 72%;
+      margin-bottom: 1em;
+    }
+
+    .form-group {
+      width: 70%;
+      position: relative;
+    }
+
+    .imagebg {
+      width: 40%;
+    }
+
+    .error {
+      color: #f96262;
+      margin-top: 0.8em;
+      display: none;
+    }
+
+    .hidden-desktop {
+      display: none;
+    }
+
+    .img-fluid {
+      max-width: 100%;
+    }
+
+    input,
+    button {
+      padding: 1.5em 2em;
+      border-radius: 30px;
+    }
+
+    input:focus,
+    button:focus {
+      outline: 0;
+    }
+
+    input[type='email'] {
+      width: 100%;
+      border: 1px solid #ce9797;
+    }
+
+    input[type='email']::placeholder {
+      color: #ce9797;
+    }
+
+    button {
+      padding: 1.3em 3.5em;
+    }
+
+    button[type='submit'],
+    button:focus {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: -webkit-linear-gradient(135deg, #f8bfbf, #ee8c8c);
+      background-image: -moz-linear-gradient(135deg, #f8bfbf, #ee8c8c);
+      background-image: -o-linear-gradient(135deg, #f8bfbf, #ee8c8c);
+      background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+      transition: all 0.5s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    button[type='submit']:hover,
+    button:focus:hover {
+      background-image: -webkit-linear-gradient(135deg, #ee8c8c, #f8bfbf);
+      background-image: -moz-linear-gradient(135deg, #ee8c8c, #f8bfbf);
+      background-image: -o-linear-gradient(135deg, #ee8c8c, #f8bfbf);
+      background-image: linear-gradient(135deg, #ee8c8c, #f8bfbf);
+    }
+
+    header {
+      position: absolute;
+      padding: 5em;
+    }
+
+    @media(max-width: 375px) {
+      main {
+        flex-direction: column-reverse;
+      }
+
+      .content {
+        width: 100%;
+        padding: 4em 2em;
+        text-align: center;
+      }
+
+      .content h1 {
+        font-size: 3.5em;
+      }
+
+      .content>p {
+        width: 100%;
+      }
+
+      .form-group {
+        width: 100%;
+      }
+
+      .imagebg {
+        width: 100%;
+      }
+
+      .hidden-desktop {
+        display: block;
+        margin: 0 auto;
+      }
+
+      header {
+        position: relative;
+        padding: 2em;
+      }
+
+      .hidden-mobile {
+        display: none;
+      }
+    }
+
+    @media(min-width: 1440px) {
+      .content {
+        padding: 10em 7em 4em;
+      }
+
+      .content h1 {
+        font-size: 5em;
+      }
+
+      header {
+        padding: 5em 7em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.svg" alt="Base Apparel logo">
+    </div>
+  </header>
+  <main>
+    <section class="content">
+      <h1><span class="colored">We're</span></h1>
+      <h1>coming</h1>
+      <h1>soon</h1>
+      <p>
+        Hello fellow shoppers! We're currently building our new
+        fashion store. Add your email below to stay up-to-date with
+        announcements and our launch deals.
+      </p>
+      <!-- form start-->
+      <form action="" onsubmit="return validateForm()" id="emailForm">
+        <div class="form-group">
+          <input type="email" name="email-address" id="email" placeholder="Email Address" aria-label="emailInput" />
+          <button type="submit">
+            <img src="images/icon-arrow.svg" alt="button arrow" />
+          </button>
+        </div>
+        <p class="error">Please provide a valid email</p>
+      </form>
+    </section>
+    <section class="imagebg">
+      <img src="images/hero-desktop.jpg" alt="hero desktop image" class="img-fluid hidden-mobile" />
+      <img src="images/hero-mobile.jpg" alt="hero desktop image" class="img-fluid hidden-desktop" />
+    </section>
+  </main>
+
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+  <script>
+    let emailInput = document.querySelector('#email');
+    let error = document.querySelectorAll('.error')[0];
+    function validateForm() {
+      let split = emailInput.value.split('.');
+      if (emailInput.value === '' || emailInput.value.indexOf('@') === -1) {
+        event.preventDefault();
+        error.style.display = 'block';
+      } else if (split[1].indexOf('.') === -1) {
+        event.preventDefault();
+        error.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+
+</html>
